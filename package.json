@@ -1,0 +1,45 @@
+{
+  "name": "pipeline-forge",
+  "version": "1.0.0",
+  "description": "Uma biblioteca extensível e fortemente tipada para construção e execução de pipelines de processamento de dados aplicando Design Patterns e Clean Code.",
+  "author": "Equipe de Arquitetura de Software",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo:basic": "tsx examples/1-out-of-the-box.ts",
+    "demo:extension": "tsx examples/2-client-extension.ts",
+    "example:basic": "vitest run tests/out-of-the-box.spec.ts",
+    "example:extension": "vitest run tests/client-extension.spec.ts"
+  },
+  "keywords": [
+    "pipeline",
+    "etl",
+    "design-patterns",
+    "clean-code",
+    "extensible",
+    "workflow"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "rimraf": "^6.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.2",
+    "vitest": "^2.0.0"
+  }
+}
